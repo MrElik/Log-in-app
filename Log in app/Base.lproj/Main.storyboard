@@ -20,11 +20,17 @@
                                 <rect key="frame" x="50" y="270" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yma-jr-IvI"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXB-mj-xgC">
                                 <rect key="frame" x="50" y="334" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tkF-bF-Rev"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExK-O6-mNh">
                                 <rect key="frame" x="150" y="418" width="114" height="38"/>
@@ -33,7 +39,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3ve-FW-HZk" kind="show" id="hce-Tr-8Wo"/>
+                                    <action selector="logInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2y4-NH-GZQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM0-bL-rT9">
@@ -76,6 +82,7 @@
                         <outlet property="logInButton" destination="ExK-O6-mNh" id="mM9-TR-g9h"/>
                         <outlet property="passwordTextFiled" destination="nXB-mj-xgC" id="tvM-PV-PpI"/>
                         <outlet property="userNameTextFiled" destination="T6q-di-GnE" id="bew-0Z-PHU"/>
+                        <segue destination="3ve-FW-HZk" kind="show" identifier="logSeque" id="i49-Nc-dsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,6 +101,9 @@
                                 <rect key="frame" x="170" y="470" width="74" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <segue destination="vbg-SI-6vA" kind="unwind" unwindAction="unwindSequeToLoginViewControllerWithSeque:" id="i0B-P4-CSL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFC-qU-Cv0">
                                 <rect key="frame" x="90" y="130" width="234" height="150"/>
@@ -122,6 +132,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2C-Rd-Okg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vbg-SI-6vA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="75"/>
         </scene>
