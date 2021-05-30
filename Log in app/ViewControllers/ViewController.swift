@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotUserNameButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    private let user = "Elik"
+    private let password = "Batman"
+    
     
     func textFiledShouldReturn(textFiled: UITextField) -> Bool {
         userNameTextFiled.delegate = self
@@ -35,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func forgotUserNameButton(_ sender: UIButton) {
         
-        let userNameAlert = UIAlertController(title: "Внимание!", message: "Твой ник - Elnur", preferredStyle: .alert)
+        let userNameAlert = UIAlertController(title: "Внимание!", message: "Твой ник - \(user)", preferredStyle: .alert)
         let userNameAlertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         userNameAlert.addAction(userNameAlertAction)
         present(userNameAlert, animated: true, completion: nil)
@@ -43,7 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         
-        let passwordAlert = UIAlertController(title: "Внимание!", message: "Твой пароль - Batman ", preferredStyle: .alert)
+        let passwordAlert = UIAlertController(title: "Внимание!", message: "Твой пароль - \(password)", preferredStyle: .alert)
         let passwordAlertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         passwordAlert.addAction(passwordAlertAction)
         present(passwordAlert, animated: true, completion: nil)
@@ -56,20 +59,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     
     @IBAction func unwindSequeToLoginViewController(seque: UIStoryboardSegue) {
-        userNameTextFiled.text = ""
-        passwordTextFiled.text = ""
+        userNameTextFiled.text = nil
+        passwordTextFiled.text = nil
     }
     
     @IBAction func logInTapped(_ sender: UIButton) {
         
-        let falsePasswordAlert = UIAlertController(title: "Аха!", message: "Допущенна ошибка логина/пароля", preferredStyle: .alert)
+        let falsePasswordAlert = UIAlertController(title: "Аха, попался!", message: "Допущенна ошибка логина/пароля", preferredStyle: .alert)
         let falsePasswordAlertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         falsePasswordAlert.addAction(falsePasswordAlertAction)
         
-        if userNameTextFiled.text == "Elnur", passwordTextFiled.text == "Batman"  {
+        if userNameTextFiled.text == "\(user)", passwordTextFiled.text == "\(password)"  {
         performSegue(withIdentifier: "logSeque", sender: nil)
-        } else { present(falsePasswordAlert, animated: true, completion: nil)
-            passwordTextFiled.text = ""
+        } else {
+            present(falsePasswordAlert, animated: true, completion: nil)
+            passwordTextFiled.text = nil
+            userNameTextFiled.text = nil
             }
 }
 }

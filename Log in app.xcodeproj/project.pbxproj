@@ -58,16 +58,32 @@
 		FAA06F52265FE98300B553C7 /* Log in app */ = {
 			isa = PBXGroup;
 			children = (
+				FAE7E35F2663F12B00079C02 /* ViewControllers */,
+				FAE7E35E2663F0EA00079C02 /* Storyboards */,
 				FAA06F53265FE98300B553C7 /* AppDelegate.swift */,
 				FAA06F55265FE98300B553C7 /* SceneDelegate.swift */,
-				FAA06F57265FE98300B553C7 /* ViewController.swift */,
-				FAA06F59265FE98300B553C7 /* Main.storyboard */,
 				FAA06F5C265FE98600B553C7 /* Assets.xcassets */,
-				FAA06F5E265FE98600B553C7 /* LaunchScreen.storyboard */,
 				FAA06F61265FE98600B553C7 /* Info.plist */,
-				FA4EDBFA266033860082EC91 /* WelcomeViewController.swift */,
 			);
 			path = "Log in app";
+			sourceTree = "<group>";
+		};
+		FAE7E35E2663F0EA00079C02 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAA06F59265FE98300B553C7 /* Main.storyboard */,
+				FAA06F5E265FE98600B553C7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAE7E35F2663F12B00079C02 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA06F57265FE98300B553C7 /* ViewController.swift */,
+				FA4EDBFA266033860082EC91 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
